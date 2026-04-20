@@ -1,21 +1,19 @@
-// NAV TOGGLE
 const menuToggle = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector(".nav-links");
 
+// Toggle menu
 menuToggle.addEventListener("click", () => {
   navLinks.classList.toggle("active");
 });
 
-// SMOOTH SCROLL
-const links = document.querySelectorAll('.nav-links a');
+// Smooth scroll + close menu
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', (e) => {
+    const target = link.getAttribute('href');
 
-links.forEach((link) => {
-  link.addEventListener('click', (event) => {
-    const targetId = link.getAttribute('href');
-
-    if (targetId.startsWith('#')) {
-      event.preventDefault();
-      document.querySelector(targetId)?.scrollIntoView({
+    if (target.startsWith('#')) {
+      e.preventDefault();
+      document.querySelector(target)?.scrollIntoView({
         behavior: 'smooth'
       });
 
@@ -23,4 +21,3 @@ links.forEach((link) => {
     }
   });
 });
-
