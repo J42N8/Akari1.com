@@ -934,3 +934,17 @@ button {
 .hero-copy h1 {
   font-weight: 500;
 }
+
+.footer-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-links a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+}
